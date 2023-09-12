@@ -1,0 +1,3 @@
+config_dir: 'config/'
+data_dir: 'data/'
+logs_dir: 'logs/'

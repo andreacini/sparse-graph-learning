@@ -1,0 +1,57 @@
+#### Experiment params ########################################################
+hydra:
+  run:
+    dir: logs/synthetic/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+tags:
+  - 'synthetic'
+  - ${experiment_name}
+
+workers: 0
+num_threads: 1
+
+#### Dataset params ###########################################################
+dataset:
+  name: gpolyvar
+  splits:
+    val_len: 0.1
+    test_len: 0.2
+
+#### Windowing params #########################################################
+window: 12
+horizon: 1
+stride: 1
+batch_size: 128
+
+#### Training params ##########################################################
+
+epochs: 50
+patience: 400
+batches_epoch: -1
+
+graph_mode: sf
+mc_samples: 1
+lam: null
+sf_weight: 1.
+use_baseline: True
+variance_reduced: True
+
+
+graph_module:
+  hparams:
+    k: 5
+    tau: 1.
+    sampler: sns
+    dummy_nodes: 4
+
+
+clip_grad: True
+optimizer:
+  hparams:
+    lr: 0.05
+    weight_decay: 0.
+
+#### Experiment name ###########################################################
+
+experiment_name: graph_id
+

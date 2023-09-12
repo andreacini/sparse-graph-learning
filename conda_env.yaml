@@ -1,0 +1,29 @@
+name: sgl
+channels:
+  - pytorch
+  - pyg
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch>=2.0.0
+  - pytorch-cuda=11.7
+  - pyg
+  - pytorch-scatter
+  - pytorch-sparse
+  - pip
+  - pip:
+      - einops
+      - hydra-core
+      - lightning
+      - numpy>1.20.3
+      - omegaconf
+      - pandas>=1.4
+      - PyYAML
+      - scikit-learn
+      - scipy
+      - tables
+      - torchmetrics>=0.7
+      - tqdm
+      - torch-spatiotemporal==0.9.4
